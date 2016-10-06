@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		869C5F011DA68CC400C0F293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F001DA68CC400C0F293 /* main.m */; };
+		869C5F041DA68CC400C0F293 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F031DA68CC400C0F293 /* AppDelegate.m */; };
+		869C5F071DA68CC400C0F293 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F061DA68CC400C0F293 /* ViewController.m */; };
+		869C5F0A1DA68CC400C0F293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F081DA68CC400C0F293 /* Main.storyboard */; };
+		869C5F0D1DA68CC400C0F293 /* Sydra.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F0B1DA68CC400C0F293 /* Sydra.xcdatamodeld */; };
+		869C5F0F1DA68CC400C0F293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F0E1DA68CC400C0F293 /* Assets.xcassets */; };
+		869C5F121DA68CC400C0F293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F101DA68CC400C0F293 /* LaunchScreen.storyboard */; };
+		869C5F1D1DA68CC400C0F293 /* SydraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F1C1DA68CC400C0F293 /* SydraTests.m */; };
+		869C5F281DA68CC400C0F293 /* SydraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F271DA68CC400C0F293 /* SydraUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		869C5F191DA68CC400C0F293 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 869C5EF41DA68CC300C0F293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 869C5EFB1DA68CC400C0F293;
+			remoteInfo = Sydra;
+		};
+		869C5F241DA68CC400C0F293 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 869C5EF41DA68CC300C0F293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 869C5EFB1DA68CC400C0F293;
+			remoteInfo = Sydra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		869C5EFC1DA68CC400C0F293 /* Sydra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sydra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		869C5F001DA68CC400C0F293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		869C5F021DA68CC400C0F293 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		869C5F031DA68CC400C0F293 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		869C5F051DA68CC400C0F293 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		869C5F061DA68CC400C0F293 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		869C5F091DA68CC400C0F293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		869C5F0C1DA68CC400C0F293 /* Sydra.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sydra.xcdatamodel; sourceTree = "<group>"; };
+		869C5F0E1DA68CC400C0F293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		869C5F111DA68CC400C0F293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		869C5F131DA68CC400C0F293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		869C5F181DA68CC400C0F293 /* SydraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SydraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		869C5F1C1DA68CC400C0F293 /* SydraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SydraTests.m; sourceTree = "<group>"; };
+		869C5F1E1DA68CC400C0F293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		869C5F231DA68CC400C0F293 /* SydraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SydraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		869C5F271DA68CC400C0F293 /* SydraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SydraUITests.m; sourceTree = "<group>"; };
+		869C5F291DA68CC400C0F293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		869C5EF91DA68CC400C0F293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869C5F151DA68CC400C0F293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869C5F201DA68CC400C0F293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		869C5EF31DA68CC300C0F293 = {
+			isa = PBXGroup;
+			children = (
+				869C5EFE1DA68CC400C0F293 /* Sydra */,
+				869C5F1B1DA68CC400C0F293 /* SydraTests */,
+				869C5F261DA68CC400C0F293 /* SydraUITests */,
+				869C5EFD1DA68CC400C0F293 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		869C5EFD1DA68CC400C0F293 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				869C5EFC1DA68CC400C0F293 /* Sydra.app */,
+				869C5F181DA68CC400C0F293 /* SydraTests.xctest */,
+				869C5F231DA68CC400C0F293 /* SydraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		869C5EFE1DA68CC400C0F293 /* Sydra */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F021DA68CC400C0F293 /* AppDelegate.h */,
+				869C5F031DA68CC400C0F293 /* AppDelegate.m */,
+				869C5F051DA68CC400C0F293 /* ViewController.h */,
+				869C5F061DA68CC400C0F293 /* ViewController.m */,
+				869C5F081DA68CC400C0F293 /* Main.storyboard */,
+				869C5F0E1DA68CC400C0F293 /* Assets.xcassets */,
+				869C5F101DA68CC400C0F293 /* LaunchScreen.storyboard */,
+				869C5F131DA68CC400C0F293 /* Info.plist */,
+				869C5F0B1DA68CC400C0F293 /* Sydra.xcdatamodeld */,
+				869C5EFF1DA68CC400C0F293 /* Supporting Files */,
+			);
+			path = Sydra;
+			sourceTree = "<group>";
+		};
+		869C5EFF1DA68CC400C0F293 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F001DA68CC400C0F293 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		869C5F1B1DA68CC400C0F293 /* SydraTests */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F1C1DA68CC400C0F293 /* SydraTests.m */,
+				869C5F1E1DA68CC400C0F293 /* Info.plist */,
+			);
+			path = SydraTests;
+			sourceTree = "<group>";
+		};
+		869C5F261DA68CC400C0F293 /* SydraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F271DA68CC400C0F293 /* SydraUITests.m */,
+				869C5F291DA68CC400C0F293 /* Info.plist */,
+			);
+			path = SydraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		869C5EFB1DA68CC400C0F293 /* Sydra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 869C5F2C1DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "Sydra" */;
+			buildPhases = (
+				869C5EF81DA68CC400C0F293 /* Sources */,
+				869C5EF91DA68CC400C0F293 /* Frameworks */,
+				869C5EFA1DA68CC400C0F293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sydra;
+			productName = Sydra;
+			productReference = 869C5EFC1DA68CC400C0F293 /* Sydra.app */;
+			productType = "com.apple.product-type.application";
+		};
+		869C5F171DA68CC400C0F293 /* SydraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 869C5F2F1DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "SydraTests" */;
+			buildPhases = (
+				869C5F141DA68CC400C0F293 /* Sources */,
+				869C5F151DA68CC400C0F293 /* Frameworks */,
+				869C5F161DA68CC400C0F293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				869C5F1A1DA68CC400C0F293 /* PBXTargetDependency */,
+			);
+			name = SydraTests;
+			productName = SydraTests;
+			productReference = 869C5F181DA68CC400C0F293 /* SydraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		869C5F221DA68CC400C0F293 /* SydraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 869C5F321DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "SydraUITests" */;
+			buildPhases = (
+				869C5F1F1DA68CC400C0F293 /* Sources */,
+				869C5F201DA68CC400C0F293 /* Frameworks */,
+				869C5F211DA68CC400C0F293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				869C5F251DA68CC400C0F293 /* PBXTargetDependency */,
+			);
+			name = SydraUITests;
+			productName = SydraUITests;
+			productReference = 869C5F231DA68CC400C0F293 /* SydraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		869C5EF41DA68CC300C0F293 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Ishan Alone";
+				TargetAttributes = {
+					869C5EFB1DA68CC400C0F293 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					869C5F171DA68CC400C0F293 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 869C5EFB1DA68CC400C0F293;
+					};
+					869C5F221DA68CC400C0F293 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 869C5EFB1DA68CC400C0F293;
+					};
+				};
+			};
+			buildConfigurationList = 869C5EF71DA68CC300C0F293 /* Build configuration list for PBXProject "Sydra" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 869C5EF31DA68CC300C0F293;
+			productRefGroup = 869C5EFD1DA68CC400C0F293 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				869C5EFB1DA68CC400C0F293 /* Sydra */,
+				869C5F171DA68CC400C0F293 /* SydraTests */,
+				869C5F221DA68CC400C0F293 /* SydraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		869C5EFA1DA68CC400C0F293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869C5F121DA68CC400C0F293 /* LaunchScreen.storyboard in Resources */,
+				869C5F0F1DA68CC400C0F293 /* Assets.xcassets in Resources */,
+				869C5F0A1DA68CC400C0F293 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869C5F161DA68CC400C0F293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869C5F211DA68CC400C0F293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		869C5EF81DA68CC400C0F293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869C5F071DA68CC400C0F293 /* ViewController.m in Sources */,
+				869C5F0D1DA68CC400C0F293 /* Sydra.xcdatamodeld in Sources */,
+				869C5F041DA68CC400C0F293 /* AppDelegate.m in Sources */,
+				869C5F011DA68CC400C0F293 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869C5F141DA68CC400C0F293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869C5F1D1DA68CC400C0F293 /* SydraTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		869C5F1F1DA68CC400C0F293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				869C5F281DA68CC400C0F293 /* SydraUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		869C5F1A1DA68CC400C0F293 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 869C5EFB1DA68CC400C0F293 /* Sydra */;
+			targetProxy = 869C5F191DA68CC400C0F293 /* PBXContainerItemProxy */;
+		};
+		869C5F251DA68CC400C0F293 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 869C5EFB1DA68CC400C0F293 /* Sydra */;
+			targetProxy = 869C5F241DA68CC400C0F293 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		869C5F081DA68CC400C0F293 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				869C5F091DA68CC400C0F293 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		869C5F101DA68CC400C0F293 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				869C5F111DA68CC400C0F293 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		869C5F2A1DA68CC400C0F293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		869C5F2B1DA68CC400C0F293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		869C5F2D1DA68CC400C0F293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sydra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.Sydra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		869C5F2E1DA68CC400C0F293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sydra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.Sydra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		869C5F301DA68CC400C0F293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SydraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.SydraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sydra.app/Sydra";
+			};
+			name = Debug;
+		};
+		869C5F311DA68CC400C0F293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SydraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.SydraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sydra.app/Sydra";
+			};
+			name = Release;
+		};
+		869C5F331DA68CC400C0F293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SydraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.SydraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Sydra;
+			};
+			name = Debug;
+		};
+		869C5F341DA68CC400C0F293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SydraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.SydraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Sydra;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		869C5EF71DA68CC300C0F293 /* Build configuration list for PBXProject "Sydra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869C5F2A1DA68CC400C0F293 /* Debug */,
+				869C5F2B1DA68CC400C0F293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		869C5F2C1DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "Sydra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869C5F2D1DA68CC400C0F293 /* Debug */,
+				869C5F2E1DA68CC400C0F293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		869C5F2F1DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "SydraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869C5F301DA68CC400C0F293 /* Debug */,
+				869C5F311DA68CC400C0F293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		869C5F321DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "SydraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				869C5F331DA68CC400C0F293 /* Debug */,
+				869C5F341DA68CC400C0F293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		869C5F0B1DA68CC400C0F293 /* Sydra.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				869C5F0C1DA68CC400C0F293 /* Sydra.xcdatamodel */,
+			);
+			currentVersion = 869C5F0C1DA68CC400C0F293 /* Sydra.xcdatamodel */;
+			path = Sydra.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 869C5EF41DA68CC300C0F293 /* Project object */;
+}

@@ -12,11 +12,13 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
 
-
++(AppDelegate*)getAppDelegate;
+- (void)buildAgreeTextViewFromString:(NSString *)localizedString atContainer:(UIView*)container andController:(UIViewController*)controller;
+-(void)showActivityIndicator:(BOOL)show;
+-(void)addNotification:(NSDictionary*)dictionary;
 @end
 

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SVProgressHUD.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate ()
 
@@ -17,9 +19,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
+    [application registerUserNotificationSettings:settings];
     return YES;
 }
 
++(AppDelegate*)getAppDelegate{
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
+}
+
+-(void)showActivityIndicator:(BOOL)show{
+    if (show) {
+        [SVProgressHUD show];
+    }else{
+        [SVProgressHUD dismiss];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -49,6 +67,148 @@
     [self saveContext];
 }
 
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+}
+
+- (void)buildAgreeTextViewFromString:(NSString *)localizedString atContainer:(UIView*)container andController:(UIViewController*)controller
+{
+    // 1. Split the localized string on the # sign:
+    NSArray *localizedStringPieces = [localizedString componentsSeparatedByString:@"#"];
+    
+    // 2. Loop through all the pieces:
+    NSUInteger msgChunkCount = localizedStringPieces ? localizedStringPieces.count : 0;
+    CGPoint wordLocation = CGPointMake(0.0, 0.0);
+    for (NSUInteger i = 0; i < msgChunkCount; i++)
+    {
+        NSString *chunk = [localizedStringPieces objectAtIndex:i];
+        if ([chunk isEqualToString:@""])
+        {
+            continue;     // skip this loop if the chunk is empty
+        }
+        
+        // 3. Determine what type of word this is:
+        
+        BOOL isSignUp  = [chunk hasPrefix:@"<si>"];
+        BOOL isLink =  isSignUp;
+        
+        // 4. Create label, styling dependent on whether it's a link:
+        UILabel *label = [[UILabel alloc] init];
+        label.font = [UIFont systemFontOfSize:11.0f];
+        label.text = chunk;
+        label.userInteractionEnabled = isLink;
+        [label setTextAlignment:NSTextAlignmentCenter];
+        
+        if (isLink)
+        {
+            label.textColor = [UIColor blackColor];
+            label.highlightedTextColor = [UIColor blackColor];
+            
+            // 5. Set tap gesture for this clickable text:
+            
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:controller
+                                                                                         action:@selector(tapOnLink:)];
+            
+            [label addGestureRecognizer:tapGesture];
+            
+            // Trim the markup characters from the label:
+            
+            label.text = [label.text stringByReplacingOccurrencesOfString:@"<si>" withString:@""];
+            
+            
+        }
+        else
+        {
+            label.textColor = [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1.0];
+        }
+        
+        // 6. Lay out the labels so it forms a complete sentence again:
+        
+        // If this word doesn't fit at end of this line, then move it to the next
+        // line and make sure any leading spaces are stripped off so it aligns nicely:
+        
+        [label sizeToFit];
+        
+        if (container.frame.size.width < wordLocation.x + label.bounds.size.width)
+        {
+            wordLocation.x = 0.0;                       // move this word all the way to the left...
+            wordLocation.y += label.frame.size.height;  // ...on the next line
+            
+            // And trim of any leading white space:
+            NSRange startingWhiteSpaceRange = [label.text rangeOfString:@"^\\s*"
+                                                                options:NSRegularExpressionSearch];
+            if (startingWhiteSpaceRange.location == 0)
+            {
+                label.text = [label.text stringByReplacingCharactersInRange:startingWhiteSpaceRange
+                                                                 withString:@""];
+                [label sizeToFit];
+            }
+        }
+        
+        // Set the location for this label:
+        label.frame = CGRectMake(wordLocation.x,
+                                 wordLocation.y,
+                                 label.frame.size.width,
+                                 label.frame.size.height);
+        // Show this label:
+        [container addSubview:label];
+        
+        // Update the horizontal position for the next word:
+        wordLocation.x += label.frame.size.width;
+    }
+}
+
+-(void)addNotification:(NSDictionary*)dictionary{
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    NSDate* date = [formatter dateFromString:dictionary[@"date"]];
+    //date = [self toLocalTime:date];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    NSDate* time = [formatter dateFromString:dictionary[@"time"]];
+    
+    NSDate* combined = [self combineDate:date withTime:time];
+    combined = [self toLocalTime:combined];
+    localNotification.fireDate = combined;
+    localNotification.alertBody = dictionary[@"desc"];
+    localNotification.timeZone = [NSTimeZone localTimeZone];
+    localNotification.userInfo = @{@"id":[NSString stringWithFormat:@"%d",[[dictionary objectForKey:@"id"] intValue]]};
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([[[[dictionary objectForKey:@"geometry"] objectForKey:@"location"] objectForKey:@"lat"] floatValue], [[[[dictionary objectForKey:@"geometry"] objectForKey:@"location"] objectForKey:@"lng"] floatValue]);
+    CLRegion* region =   [[CLCircularRegion alloc] initWithCenter:coordinate radius:1000 identifier:@"target"];
+    localNotification.region = region;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
+-(NSDate *) toLocalTime:(NSDate*)date
+{
+    NSTimeZone *tz = [NSTimeZone localTimeZone];
+    NSInteger seconds = [tz secondsFromGMTForDate: date];
+    return [NSDate dateWithTimeInterval: seconds sinceDate: date];
+}
+
+- (NSDate *)combineDate:(NSDate *)date withTime:(NSDate *)time {
+    
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:
+                             NSCalendarIdentifierGregorian];
+    [gregorian setTimeZone:[NSTimeZone systemTimeZone]];
+    unsigned unitFlagsDate = NSCalendarUnitYear | NSCalendarUnitMonth
+    |  NSCalendarUnitDay;
+    NSDateComponents *dateComponents = [gregorian components:unitFlagsDate
+                                                    fromDate:date];
+    unsigned unitFlagsTime = NSCalendarUnitHour | NSCalendarUnitMinute
+    |  NSCalendarUnitSecond;
+    NSDateComponents *timeComponents = [gregorian components:unitFlagsTime
+                                                    fromDate:time];
+    
+    [dateComponents setSecond:[timeComponents second]];
+    [dateComponents setHour:[timeComponents hour]];
+    [dateComponents setMinute:[timeComponents minute]];
+    
+    NSDate *combDate = [gregorian dateFromComponents:dateComponents];   
+    
+    return combDate;
+}
 
 #pragma mark - Core Data stack
 
@@ -94,5 +254,7 @@
         abort();
     }
 }
+
+
 
 @end

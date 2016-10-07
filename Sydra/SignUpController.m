@@ -1,36 +1,31 @@
 //
-//  ViewController.m
+//  SignUpController.m
 //  Sydra
 //
 //  Created by Ishan Alone on 06/10/16.
 //  Copyright © 2016 Ishan Alone. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SignUpController.h"
 #import "LoginTableViewCell.h"
 #import "AppDelegate.h"
-#import "SignUpController.h"
-#import "KeychainWrapper.h"
 
-@interface ViewController ()
+@interface SignUpController ()
 @property (nonatomic,strong) NSArray* inputArray;
 @property (nonatomic,strong) NSArray* keysArray;
 @property (nonatomic,strong) NSMutableDictionary* payloadDictionary;
 @end
 
-@implementation ViewController
+@implementation SignUpController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.inputArray = @[@"Email",@"Password",@"Domain"];
-    self.keysArray = @[@"email",@"password",@"domain_name"];
-    // Do any additional setup after loading the view, typically from a nib.
-    [[AppDelegate getAppDelegate] buildAgreeTextViewFromString:@"DON'T HAVE AN ACCOUNT?  #<si>SIGN UP#" atContainer:self.container andController:self];
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    self.logoImage.center = CGPointMake(CGRectGetMidX(screenBounds), self.logoImage.frame.size.height/2 + 30);
+    self.inputArray = @[@"Name",@"Email",@"Password",@"Confirm Password",@"Domain"];
+    self.keysArray = @[@"name",@"email",@"password",@"password_confirmation",@"domain_name"];
     self.payloadDictionary = [[NSMutableDictionary alloc] init];
+    // Do any additional setup after loading the view.
+    [[AppDelegate getAppDelegate] buildAgreeTextViewFromString:@"ALREADY HAVE AN ACCOUNT?  #<si>SIGN IN#" atContainer:self.container andController:self];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -42,70 +37,93 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    LoginTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"LoginTableViewCell" forIndexPath:indexPath];
+    LoginTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SignUpTableViewCell" forIndexPath:indexPath];
     cell.inputField.placeholder = self.inputArray[indexPath.row];
+    cell.inputField.tag = indexPath.row;
     return cell;
 }
 
-
--(void)textFieldDidBeginEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.5 animations:^{
-        [_loginTable setContentOffset:CGPointMake(0, 150)];
-        [self.logoImage setFrame:CGRectMake(40, self.logoLabel.frame.origin.y+20, 40, 40)];
-    } completion:^(BOOL finished) {
-        [_loginTable setScrollEnabled:false];
-    }];
-    
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.5 animations:^{
-        [_loginTable setContentOffset:CGPointMake(0, 0)];
-        [self.logoImage setFrame:CGRectMake(40, self.logoLabel.frame.origin.y+20, 139, 139)];
-        CGRect screenBounds = [[UIScreen mainScreen] bounds];
-        self.logoImage.center = CGPointMake(CGRectGetMidX(screenBounds), self.logoImage.frame.size.height/2 + 30);
-    } completion:^(BOOL finished) {
-        [_loginTable setScrollEnabled:true];
-    }];
-   
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    UIView* headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenBounds.size.width, 80)];
+    [headerView setBackgroundColor:[UIColor whiteColor]];
+    UILabel* logoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 80)];
+    //NSArray* array = [UIFont fontNamesForFamilyName:@"Avenir Next"];
+    [logoLabel setFont:[UIFont fontWithName:@"AvenirNext-DemiBoldItalic" size:35]];
+    logoLabel.text = @"sydra";
+    [logoLabel setTextAlignment:NSTextAlignmentCenter];
+    [logoLabel setTextColor:[UIColor colorWithRed:80/255.0f green:210/255.0f blue:194/255.0f alpha:1.0]];
+    [headerView addSubview:logoLabel];
+    logoLabel.center = CGPointMake(CGRectGetMidX(screenBounds), logoLabel.frame.size.height/2 );;
+    UIImageView* logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(logoLabel.frame.origin.x - 40, 25, 30, 30)];
+    [logoImage setImage:[UIImage imageNamed:@"sydra_logo"]];
+    [headerView addSubview:logoImage];
+    UIButton* closebutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [closebutton addTarget:self action:@selector(closeSignUp) forControlEvents:UIControlEventTouchUpInside];
+    [closebutton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [closebutton setFrame:CGRectMake(5, 5, 40, 40)];
+    [headerView addSubview:closebutton];
+    return headerView;
 }
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
+-(void)closeSignUp{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 80;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"Offsetpoit - %@",NSStringFromCGPoint(self.signUpTable.contentOffset));
+    /*if ((self.signUpTable.contentOffset.y > SCROLL_OFFSET_HEADER_SHRINK &&
+         self.signUpTable.tableHeaderView.frame.size.height > 80) ||
+        self.signUpTable.contentOffset.y < SCROLL_OFFSET_HEADER_SHRINK) {
+        [self.signUpTable reloadData];
+    }*/
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.5 animations:^{
+        [_signUpTable setContentOffset:CGPointMake(0, 20 + (textField.tag*40))];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.5 animations:^{
+        [_signUpTable setContentOffset:CGPointMake(0, 0)];
+    } completion:^(BOOL finished) {
+    
+    }];
+    
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
 
--(void)fillLoginValues:(NSArray*)array{
-    for (int i = 0; i < self.inputArray.count; i++) {
-        LoginTableViewCell* cell = [self.loginTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        cell.inputField.text = array[i];
-    }
-}
-
 - (void)tapOnLink:(UITapGestureRecognizer *)tapGesture
 {
     if (tapGesture.state == UIGestureRecognizerStateEnded)
     {
-        [self performSegueWithIdentifier:@"SignUp" sender:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    SignUpController* controller = segue.destinationViewController;
-    controller.controller = self;
-}
-
--(IBAction)signIn:(id)sender{
+-(IBAction)signUp:(id)sender{
     NSError *error;
     NSString *noteDataString;
     //[self.payloadDictionary setObject:@"" forKey:@"domain_name"];
     for (int i =0; i < _keysArray.count; i++) {
-        LoginTableViewCell* cell = [self.loginTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        LoginTableViewCell* cell = [self.signUpTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         if (cell.inputField.text.length != 0) {
             [self.payloadDictionary setObject:cell.inputField.text forKey:self.keysArray[i]];
         }
@@ -127,7 +145,7 @@
         
         NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
         
-        NSString *url = @"http://happytodo.int2root.com/v1/signin";
+        NSString *url = @"http://happytodo.int2root.com/v1/signup";
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         request.HTTPBody = jsonData;
         request.HTTPMethod = @"POST";
@@ -140,10 +158,10 @@
                 if (httpResponse.statusCode == 200){
                     NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:nil];
                     NSLog(@"response - %@",jsonData);
-        
-                    [[NSUserDefaults standardUserDefaults] setObject:jsonData[@"auth_token"] forKey:@"token"];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
-                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    
+                    [self dismissViewControllerAnimated:YES completion:^{
+                        [_controller fillLoginValues:@[self.payloadDictionary[@"email"],self.payloadDictionary[@"password"],self.payloadDictionary[@"domain_name"]]];
+                    }];
                     //Process the data
                 }else{
                     NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:nil];
@@ -157,5 +175,15 @@
     
     
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

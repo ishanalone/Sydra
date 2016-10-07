@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Colors" syncable="YES">
+        <attribute name="colorBlue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colorGreen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colorId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="colorRed" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES">
+        <attribute name="taskColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskCordinates" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskDetail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskTime" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Colors" positionX="-54" positionY="36" width="128" height="120"/>
+        <element name="Task" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
 </model>

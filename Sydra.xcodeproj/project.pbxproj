@@ -16,6 +16,62 @@
 		869C5F121DA68CC400C0F293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F101DA68CC400C0F293 /* LaunchScreen.storyboard */; };
 		869C5F1D1DA68CC400C0F293 /* SydraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F1C1DA68CC400C0F293 /* SydraTests.m */; };
 		869C5F281DA68CC400C0F293 /* SydraUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F271DA68CC400C0F293 /* SydraUITests.m */; };
+		869C5F371DA68EAE00C0F293 /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F361DA68EAE00C0F293 /* LoginTableViewCell.m */; };
+		869C5F3A1DA690FA00C0F293 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C5F391DA690FA00C0F293 /* QuartzCore.framework */; };
+		869C5F3E1DA69CFE00C0F293 /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F3D1DA69CFE00C0F293 /* SignUpController.m */; };
+		869C5F421DA6A06500C0F293 /* TealButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F411DA6A06500C0F293 /* TealButton.m */; };
+		869C5F451DA6AB5800C0F293 /* sydra_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F441DA6AB5800C0F293 /* sydra_logo.png */; };
+		869C5F471DA6AB6200C0F293 /* sydra_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F461DA6AB6200C0F293 /* sydra_logo@2x.png */; };
+		869C5F4E1DA6C05C00C0F293 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F4D1DA6C05C00C0F293 /* close@2x.png */; };
+		869C5F501DA6C06000C0F293 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F4F1DA6C06000C0F293 /* close.png */; };
+		869C5F721DA6C83B00C0F293 /* FSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F531DA6C83B00C0F293 /* FSCalendar.m */; };
+		869C5F731DA6C83B00C0F293 /* FSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F551DA6C83B00C0F293 /* FSCalendarAppearance.m */; };
+		869C5F741DA6C83B00C0F293 /* FSCalendarConstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F571DA6C83B00C0F293 /* FSCalendarConstance.m */; };
+		869C5F751DA6C83B00C0F293 /* FSCalendarScopeHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F591DA6C83B00C0F293 /* FSCalendarScopeHandle.m */; };
+		869C5F761DA6C83B00C0F293 /* FSCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F5B1DA6C83B00C0F293 /* FSCalendarCell.m */; };
+		869C5F771DA6C83B00C0F293 /* FSCalendarEventIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F5D1DA6C83B00C0F293 /* FSCalendarEventIndicator.m */; };
+		869C5F781DA6C83B00C0F293 /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F5F1DA6C83B00C0F293 /* FSCalendarCollectionView.m */; };
+		869C5F791DA6C83B00C0F293 /* FSCalendarHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F611DA6C83B00C0F293 /* FSCalendarHeader.m */; };
+		869C5F7A1DA6C83B00C0F293 /* FSCalendarStickyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F631DA6C83B00C0F293 /* FSCalendarStickyHeader.m */; };
+		869C5F7B1DA6C83B00C0F293 /* FSCalendarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F651DA6C83B00C0F293 /* FSCalendarFlowLayout.m */; };
+		869C5F7C1DA6C83B00C0F293 /* FSCalendarAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F671DA6C83B00C0F293 /* FSCalendarAnimator.m */; };
+		869C5F7D1DA6C83B00C0F293 /* UIView+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F6A1DA6C83B00C0F293 /* UIView+FSExtension.m */; };
+		869C5F7E1DA6C83B00C0F293 /* CALayer+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F6C1DA6C83B00C0F293 /* CALayer+FSExtension.m */; };
+		869C5F7F1DA6C83B00C0F293 /* NSObject+FSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F6E1DA6C83B00C0F293 /* NSObject+FSExtension.m */; };
+		869C5F801DA6C83B00C0F293 /* FSCalendar+IBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F701DA6C83B00C0F293 /* FSCalendar+IBExtension.m */; };
+		869C5F811DA6C83B00C0F293 /* FSCalendar+Deprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F711DA6C83B00C0F293 /* FSCalendar+Deprecated.m */; };
+		869C5F851DA6C91000C0F293 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F841DA6C91000C0F293 /* TimelineViewController.m */; };
+		869C5F891DA6D4F500C0F293 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F881DA6D4F500C0F293 /* more@2x.png */; };
+		869C5F8B1DA6D4FC00C0F293 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F8A1DA6D4FC00C0F293 /* more.png */; };
+		869C5F8D1DA6D9CA00C0F293 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F8C1DA6D9CA00C0F293 /* plus.png */; };
+		869C5F8F1DA6D9CE00C0F293 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F8E1DA6D9CE00C0F293 /* plus@2x.png */; };
+		869C5F911DA6D9D400C0F293 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F901DA6D9D400C0F293 /* menu.png */; };
+		869C5F931DA6D9D900C0F293 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F921DA6D9D900C0F293 /* menu@2x.png */; };
+		869C5F971DA6DFF800C0F293 /* NewTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F961DA6DFF800C0F293 /* NewTaskViewController.m */; };
+		869C5F9A1DA6E08800C0F293 /* NewTaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F991DA6E08800C0F293 /* NewTaskTableViewCell.m */; };
+		869C5F9C1DA6E45F00C0F293 /* ColorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 869C5F9B1DA6E45F00C0F293 /* ColorList.plist */; };
+		869C5FA71DA7096A00C0F293 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5F9F1DA7096A00C0F293 /* SVIndefiniteAnimatedView.m */; };
+		869C5FA81DA7096A00C0F293 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5FA11DA7096A00C0F293 /* SVProgressAnimatedView.m */; };
+		869C5FA91DA7096A00C0F293 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 869C5FA21DA7096A00C0F293 /* SVProgressHUD.bundle */; };
+		869C5FAA1DA7096A00C0F293 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5FA41DA7096A00C0F293 /* SVProgressHUD.m */; };
+		869C5FAB1DA7096A00C0F293 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5FA61DA7096A00C0F293 /* SVRadialGradientLayer.m */; };
+		869C5FAE1DA70E1C00C0F293 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5FAD1DA70E1C00C0F293 /* KeychainWrapper.m */; };
+		869C5FB11DA7193B00C0F293 /* IQDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5FB01DA7193B00C0F293 /* IQDropDownTextField.m */; };
+		869C5FB81DA72C1200C0F293 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 869C5FB71DA72C1200C0F293 /* MapViewController.m */; };
+		869C5FBA1DA72EE900C0F293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869C5FB91DA72EE900C0F293 /* MapKit.framework */; };
+		86EFAA0A1DA73301004DD3C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EFAA091DA73301004DD3C3 /* CoreLocation.framework */; };
+		86EFAA161DA74C45004DD3C3 /* Task+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EFAA131DA74C45004DD3C3 /* Task+CoreDataClass.m */; };
+		86EFAA171DA74C45004DD3C3 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EFAA151DA74C45004DD3C3 /* Task+CoreDataProperties.m */; };
+		86EFAA1A1DA74C78004DD3C3 /* CoreDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EFAA191DA74C78004DD3C3 /* CoreDataHandler.m */; };
+		86EFAA231DA76A2A004DD3C3 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA1B1DA76A2A004DD3C3 /* clock.png */; };
+		86EFAA241DA76A2A004DD3C3 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA1C1DA76A2A004DD3C3 /* clock@2x.png */; };
+		86EFAA251DA76A2A004DD3C3 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA1D1DA76A2A004DD3C3 /* done.png */; };
+		86EFAA261DA76A2A004DD3C3 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA1E1DA76A2A004DD3C3 /* done@2x.png */; };
+		86EFAA271DA76A2A004DD3C3 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA1F1DA76A2A004DD3C3 /* edit.png */; };
+		86EFAA281DA76A2A004DD3C3 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA201DA76A2A004DD3C3 /* edit@2x.png */; };
+		86EFAA291DA76A2A004DD3C3 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA211DA76A2A004DD3C3 /* pointer.png */; };
+		86EFAA2A1DA76A2A004DD3C3 /* pointer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86EFAA221DA76A2A004DD3C3 /* pointer@2x.png */; };
+		86EFAA2D1DA76A80004DD3C3 /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EFAA2C1DA76A80004DD3C3 /* TimelineTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +109,95 @@
 		869C5F231DA68CC400C0F293 /* SydraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SydraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		869C5F271DA68CC400C0F293 /* SydraUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SydraUITests.m; sourceTree = "<group>"; };
 		869C5F291DA68CC400C0F293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		869C5F351DA68EAE00C0F293 /* LoginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTableViewCell.h; sourceTree = "<group>"; };
+		869C5F361DA68EAE00C0F293 /* LoginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTableViewCell.m; sourceTree = "<group>"; };
+		869C5F391DA690FA00C0F293 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		869C5F3C1DA69CFE00C0F293 /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpController.h; sourceTree = "<group>"; };
+		869C5F3D1DA69CFE00C0F293 /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpController.m; sourceTree = "<group>"; };
+		869C5F401DA6A06500C0F293 /* TealButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TealButton.h; sourceTree = "<group>"; };
+		869C5F411DA6A06500C0F293 /* TealButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TealButton.m; sourceTree = "<group>"; };
+		869C5F441DA6AB5800C0F293 /* sydra_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sydra_logo.png; sourceTree = "<group>"; };
+		869C5F461DA6AB6200C0F293 /* sydra_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sydra_logo@2x.png"; sourceTree = "<group>"; };
+		869C5F4D1DA6C05C00C0F293 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		869C5F4F1DA6C06000C0F293 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		869C5F521DA6C83B00C0F293 /* FSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendar.h; sourceTree = "<group>"; };
+		869C5F531DA6C83B00C0F293 /* FSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendar.m; sourceTree = "<group>"; };
+		869C5F541DA6C83B00C0F293 /* FSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarAppearance.h; sourceTree = "<group>"; };
+		869C5F551DA6C83B00C0F293 /* FSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarAppearance.m; sourceTree = "<group>"; };
+		869C5F561DA6C83B00C0F293 /* FSCalendarConstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarConstance.h; sourceTree = "<group>"; };
+		869C5F571DA6C83B00C0F293 /* FSCalendarConstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarConstance.m; sourceTree = "<group>"; };
+		869C5F581DA6C83B00C0F293 /* FSCalendarScopeHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarScopeHandle.h; sourceTree = "<group>"; };
+		869C5F591DA6C83B00C0F293 /* FSCalendarScopeHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarScopeHandle.m; sourceTree = "<group>"; };
+		869C5F5A1DA6C83B00C0F293 /* FSCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarCell.h; sourceTree = "<group>"; };
+		869C5F5B1DA6C83B00C0F293 /* FSCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCell.m; sourceTree = "<group>"; };
+		869C5F5C1DA6C83B00C0F293 /* FSCalendarEventIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarEventIndicator.h; sourceTree = "<group>"; };
+		869C5F5D1DA6C83B00C0F293 /* FSCalendarEventIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarEventIndicator.m; sourceTree = "<group>"; };
+		869C5F5E1DA6C83B00C0F293 /* FSCalendarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarCollectionView.h; sourceTree = "<group>"; };
+		869C5F5F1DA6C83B00C0F293 /* FSCalendarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCollectionView.m; sourceTree = "<group>"; };
+		869C5F601DA6C83B00C0F293 /* FSCalendarHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarHeader.h; sourceTree = "<group>"; };
+		869C5F611DA6C83B00C0F293 /* FSCalendarHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarHeader.m; sourceTree = "<group>"; };
+		869C5F621DA6C83B00C0F293 /* FSCalendarStickyHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarStickyHeader.h; sourceTree = "<group>"; };
+		869C5F631DA6C83B00C0F293 /* FSCalendarStickyHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarStickyHeader.m; sourceTree = "<group>"; };
+		869C5F641DA6C83B00C0F293 /* FSCalendarFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarFlowLayout.h; sourceTree = "<group>"; };
+		869C5F651DA6C83B00C0F293 /* FSCalendarFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarFlowLayout.m; sourceTree = "<group>"; };
+		869C5F661DA6C83B00C0F293 /* FSCalendarAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarAnimator.h; sourceTree = "<group>"; };
+		869C5F671DA6C83B00C0F293 /* FSCalendarAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarAnimator.m; sourceTree = "<group>"; };
+		869C5F681DA6C83B00C0F293 /* FSCalendarDynamicHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarDynamicHeader.h; sourceTree = "<group>"; };
+		869C5F691DA6C83B00C0F293 /* UIView+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FSExtension.h"; sourceTree = "<group>"; };
+		869C5F6A1DA6C83B00C0F293 /* UIView+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FSExtension.m"; sourceTree = "<group>"; };
+		869C5F6B1DA6C83B00C0F293 /* CALayer+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FSExtension.h"; sourceTree = "<group>"; };
+		869C5F6C1DA6C83B00C0F293 /* CALayer+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FSExtension.m"; sourceTree = "<group>"; };
+		869C5F6D1DA6C83B00C0F293 /* NSObject+FSExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FSExtension.h"; sourceTree = "<group>"; };
+		869C5F6E1DA6C83B00C0F293 /* NSObject+FSExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FSExtension.m"; sourceTree = "<group>"; };
+		869C5F6F1DA6C83B00C0F293 /* FSCalendar+IBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FSCalendar+IBExtension.h"; sourceTree = "<group>"; };
+		869C5F701DA6C83B00C0F293 /* FSCalendar+IBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSCalendar+IBExtension.m"; sourceTree = "<group>"; };
+		869C5F711DA6C83B00C0F293 /* FSCalendar+Deprecated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FSCalendar+Deprecated.m"; sourceTree = "<group>"; };
+		869C5F831DA6C91000C0F293 /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		869C5F841DA6C91000C0F293 /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		869C5F881DA6D4F500C0F293 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		869C5F8A1DA6D4FC00C0F293 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		869C5F8C1DA6D9CA00C0F293 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		869C5F8E1DA6D9CE00C0F293 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		869C5F901DA6D9D400C0F293 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		869C5F921DA6D9D900C0F293 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		869C5F951DA6DFF800C0F293 /* NewTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskViewController.h; sourceTree = "<group>"; };
+		869C5F961DA6DFF800C0F293 /* NewTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskViewController.m; sourceTree = "<group>"; };
+		869C5F981DA6E08800C0F293 /* NewTaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTaskTableViewCell.h; sourceTree = "<group>"; };
+		869C5F991DA6E08800C0F293 /* NewTaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTaskTableViewCell.m; sourceTree = "<group>"; };
+		869C5F9B1DA6E45F00C0F293 /* ColorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorList.plist; sourceTree = "<group>"; };
+		869C5F9E1DA7096A00C0F293 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		869C5F9F1DA7096A00C0F293 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		869C5FA01DA7096A00C0F293 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		869C5FA11DA7096A00C0F293 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		869C5FA21DA7096A00C0F293 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		869C5FA31DA7096A00C0F293 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		869C5FA41DA7096A00C0F293 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		869C5FA51DA7096A00C0F293 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		869C5FA61DA7096A00C0F293 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		869C5FAC1DA70E1C00C0F293 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		869C5FAD1DA70E1C00C0F293 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		869C5FAF1DA7193A00C0F293 /* IQDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQDropDownTextField.h; sourceTree = "<group>"; };
+		869C5FB01DA7193B00C0F293 /* IQDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQDropDownTextField.m; sourceTree = "<group>"; };
+		869C5FB61DA72C1200C0F293 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		869C5FB71DA72C1200C0F293 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		869C5FB91DA72EE900C0F293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		86EFAA091DA73301004DD3C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		86EFAA121DA74C45004DD3C3 /* Task+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataClass.h"; sourceTree = "<group>"; };
+		86EFAA131DA74C45004DD3C3 /* Task+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataClass.m"; sourceTree = "<group>"; };
+		86EFAA141DA74C45004DD3C3 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		86EFAA151DA74C45004DD3C3 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		86EFAA181DA74C78004DD3C3 /* CoreDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHandler.h; sourceTree = "<group>"; };
+		86EFAA191DA74C78004DD3C3 /* CoreDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHandler.m; sourceTree = "<group>"; };
+		86EFAA1B1DA76A2A004DD3C3 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		86EFAA1C1DA76A2A004DD3C3 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		86EFAA1D1DA76A2A004DD3C3 /* done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done.png; sourceTree = "<group>"; };
+		86EFAA1E1DA76A2A004DD3C3 /* done@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done@2x.png"; sourceTree = "<group>"; };
+		86EFAA1F1DA76A2A004DD3C3 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		86EFAA201DA76A2A004DD3C3 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit@2x.png"; sourceTree = "<group>"; };
+		86EFAA211DA76A2A004DD3C3 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
+		86EFAA221DA76A2A004DD3C3 /* pointer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointer@2x.png"; sourceTree = "<group>"; };
+		86EFAA2B1DA76A80004DD3C3 /* TimelineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineTableViewCell.h; sourceTree = "<group>"; };
+		86EFAA2C1DA76A80004DD3C3 /* TimelineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +205,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EFAA0A1DA73301004DD3C3 /* CoreLocation.framework in Frameworks */,
+				869C5FBA1DA72EE900C0F293 /* MapKit.framework in Frameworks */,
+				869C5F3A1DA690FA00C0F293 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +235,7 @@
 				869C5F1B1DA68CC400C0F293 /* SydraTests */,
 				869C5F261DA68CC400C0F293 /* SydraUITests */,
 				869C5EFD1DA68CC400C0F293 /* Products */,
+				869C5F381DA690FA00C0F293 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +252,19 @@
 		869C5EFE1DA68CC400C0F293 /* Sydra */ = {
 			isa = PBXGroup;
 			children = (
+				86EFAA0B1DA74B3C004DD3C3 /* CoreDataHandler */,
+				869C5FB51DA72BF800C0F293 /* MapViewController */,
+				869C5F941DA6DFBE00C0F293 /* NewTaskViewController */,
+				869C5F821DA6C8F000C0F293 /* TimelineViewController */,
+				869C5F431DA6AB4D00C0F293 /* Images */,
+				869C5F3F1DA69E9200C0F293 /* Commons */,
+				869C5F3B1DA69CE300C0F293 /* SignUpController */,
 				869C5F021DA68CC400C0F293 /* AppDelegate.h */,
 				869C5F031DA68CC400C0F293 /* AppDelegate.m */,
 				869C5F051DA68CC400C0F293 /* ViewController.h */,
 				869C5F061DA68CC400C0F293 /* ViewController.m */,
+				869C5F351DA68EAE00C0F293 /* LoginTableViewCell.h */,
+				869C5F361DA68EAE00C0F293 /* LoginTableViewCell.m */,
 				869C5F081DA68CC400C0F293 /* Main.storyboard */,
 				869C5F0E1DA68CC400C0F293 /* Assets.xcassets */,
 				869C5F101DA68CC400C0F293 /* LaunchScreen.storyboard */,
@@ -141,6 +299,165 @@
 				869C5F291DA68CC400C0F293 /* Info.plist */,
 			);
 			path = SydraUITests;
+			sourceTree = "<group>";
+		};
+		869C5F381DA690FA00C0F293 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86EFAA091DA73301004DD3C3 /* CoreLocation.framework */,
+				869C5FB91DA72EE900C0F293 /* MapKit.framework */,
+				869C5F391DA690FA00C0F293 /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		869C5F3B1DA69CE300C0F293 /* SignUpController */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F3C1DA69CFE00C0F293 /* SignUpController.h */,
+				869C5F3D1DA69CFE00C0F293 /* SignUpController.m */,
+			);
+			name = SignUpController;
+			sourceTree = "<group>";
+		};
+		869C5F3F1DA69E9200C0F293 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				869C5FAF1DA7193A00C0F293 /* IQDropDownTextField.h */,
+				869C5FB01DA7193B00C0F293 /* IQDropDownTextField.m */,
+				869C5FAC1DA70E1C00C0F293 /* KeychainWrapper.h */,
+				869C5FAD1DA70E1C00C0F293 /* KeychainWrapper.m */,
+				869C5F9D1DA7093200C0F293 /* HUD */,
+				869C5F511DA6C82B00C0F293 /* FSCalendar */,
+				869C5F401DA6A06500C0F293 /* TealButton.h */,
+				869C5F411DA6A06500C0F293 /* TealButton.m */,
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
+		869C5F431DA6AB4D00C0F293 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				86EFAA1B1DA76A2A004DD3C3 /* clock.png */,
+				86EFAA1C1DA76A2A004DD3C3 /* clock@2x.png */,
+				86EFAA1D1DA76A2A004DD3C3 /* done.png */,
+				86EFAA1E1DA76A2A004DD3C3 /* done@2x.png */,
+				86EFAA1F1DA76A2A004DD3C3 /* edit.png */,
+				86EFAA201DA76A2A004DD3C3 /* edit@2x.png */,
+				86EFAA211DA76A2A004DD3C3 /* pointer.png */,
+				86EFAA221DA76A2A004DD3C3 /* pointer@2x.png */,
+				869C5F8C1DA6D9CA00C0F293 /* plus.png */,
+				869C5F8E1DA6D9CE00C0F293 /* plus@2x.png */,
+				869C5F901DA6D9D400C0F293 /* menu.png */,
+				869C5F921DA6D9D900C0F293 /* menu@2x.png */,
+				869C5F8A1DA6D4FC00C0F293 /* more.png */,
+				869C5F881DA6D4F500C0F293 /* more@2x.png */,
+				869C5F4D1DA6C05C00C0F293 /* close@2x.png */,
+				869C5F4F1DA6C06000C0F293 /* close.png */,
+				869C5F461DA6AB6200C0F293 /* sydra_logo@2x.png */,
+				869C5F441DA6AB5800C0F293 /* sydra_logo.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		869C5F511DA6C82B00C0F293 /* FSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F521DA6C83B00C0F293 /* FSCalendar.h */,
+				869C5F531DA6C83B00C0F293 /* FSCalendar.m */,
+				869C5F541DA6C83B00C0F293 /* FSCalendarAppearance.h */,
+				869C5F551DA6C83B00C0F293 /* FSCalendarAppearance.m */,
+				869C5F561DA6C83B00C0F293 /* FSCalendarConstance.h */,
+				869C5F571DA6C83B00C0F293 /* FSCalendarConstance.m */,
+				869C5F581DA6C83B00C0F293 /* FSCalendarScopeHandle.h */,
+				869C5F591DA6C83B00C0F293 /* FSCalendarScopeHandle.m */,
+				869C5F5A1DA6C83B00C0F293 /* FSCalendarCell.h */,
+				869C5F5B1DA6C83B00C0F293 /* FSCalendarCell.m */,
+				869C5F5C1DA6C83B00C0F293 /* FSCalendarEventIndicator.h */,
+				869C5F5D1DA6C83B00C0F293 /* FSCalendarEventIndicator.m */,
+				869C5F5E1DA6C83B00C0F293 /* FSCalendarCollectionView.h */,
+				869C5F5F1DA6C83B00C0F293 /* FSCalendarCollectionView.m */,
+				869C5F601DA6C83B00C0F293 /* FSCalendarHeader.h */,
+				869C5F611DA6C83B00C0F293 /* FSCalendarHeader.m */,
+				869C5F621DA6C83B00C0F293 /* FSCalendarStickyHeader.h */,
+				869C5F631DA6C83B00C0F293 /* FSCalendarStickyHeader.m */,
+				869C5F641DA6C83B00C0F293 /* FSCalendarFlowLayout.h */,
+				869C5F651DA6C83B00C0F293 /* FSCalendarFlowLayout.m */,
+				869C5F661DA6C83B00C0F293 /* FSCalendarAnimator.h */,
+				869C5F671DA6C83B00C0F293 /* FSCalendarAnimator.m */,
+				869C5F681DA6C83B00C0F293 /* FSCalendarDynamicHeader.h */,
+				869C5F691DA6C83B00C0F293 /* UIView+FSExtension.h */,
+				869C5F6A1DA6C83B00C0F293 /* UIView+FSExtension.m */,
+				869C5F6B1DA6C83B00C0F293 /* CALayer+FSExtension.h */,
+				869C5F6C1DA6C83B00C0F293 /* CALayer+FSExtension.m */,
+				869C5F6D1DA6C83B00C0F293 /* NSObject+FSExtension.h */,
+				869C5F6E1DA6C83B00C0F293 /* NSObject+FSExtension.m */,
+				869C5F6F1DA6C83B00C0F293 /* FSCalendar+IBExtension.h */,
+				869C5F701DA6C83B00C0F293 /* FSCalendar+IBExtension.m */,
+				869C5F711DA6C83B00C0F293 /* FSCalendar+Deprecated.m */,
+			);
+			name = FSCalendar;
+			sourceTree = "<group>";
+		};
+		869C5F821DA6C8F000C0F293 /* TimelineViewController */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F831DA6C91000C0F293 /* TimelineViewController.h */,
+				869C5F841DA6C91000C0F293 /* TimelineViewController.m */,
+				86EFAA2B1DA76A80004DD3C3 /* TimelineTableViewCell.h */,
+				86EFAA2C1DA76A80004DD3C3 /* TimelineTableViewCell.m */,
+			);
+			name = TimelineViewController;
+			sourceTree = "<group>";
+		};
+		869C5F941DA6DFBE00C0F293 /* NewTaskViewController */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F951DA6DFF800C0F293 /* NewTaskViewController.h */,
+				869C5F961DA6DFF800C0F293 /* NewTaskViewController.m */,
+				869C5F981DA6E08800C0F293 /* NewTaskTableViewCell.h */,
+				869C5F991DA6E08800C0F293 /* NewTaskTableViewCell.m */,
+				869C5F9B1DA6E45F00C0F293 /* ColorList.plist */,
+			);
+			name = NewTaskViewController;
+			sourceTree = "<group>";
+		};
+		869C5F9D1DA7093200C0F293 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				869C5F9E1DA7096A00C0F293 /* SVIndefiniteAnimatedView.h */,
+				869C5F9F1DA7096A00C0F293 /* SVIndefiniteAnimatedView.m */,
+				869C5FA01DA7096A00C0F293 /* SVProgressAnimatedView.h */,
+				869C5FA11DA7096A00C0F293 /* SVProgressAnimatedView.m */,
+				869C5FA21DA7096A00C0F293 /* SVProgressHUD.bundle */,
+				869C5FA31DA7096A00C0F293 /* SVProgressHUD.h */,
+				869C5FA41DA7096A00C0F293 /* SVProgressHUD.m */,
+				869C5FA51DA7096A00C0F293 /* SVRadialGradientLayer.h */,
+				869C5FA61DA7096A00C0F293 /* SVRadialGradientLayer.m */,
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
+		869C5FB51DA72BF800C0F293 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				869C5FB61DA72C1200C0F293 /* MapViewController.h */,
+				869C5FB71DA72C1200C0F293 /* MapViewController.m */,
+			);
+			name = MapViewController;
+			sourceTree = "<group>";
+		};
+		86EFAA0B1DA74B3C004DD3C3 /* CoreDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				86EFAA121DA74C45004DD3C3 /* Task+CoreDataClass.h */,
+				86EFAA131DA74C45004DD3C3 /* Task+CoreDataClass.m */,
+				86EFAA141DA74C45004DD3C3 /* Task+CoreDataProperties.h */,
+				86EFAA151DA74C45004DD3C3 /* Task+CoreDataProperties.m */,
+				86EFAA181DA74C78004DD3C3 /* CoreDataHandler.h */,
+				86EFAA191DA74C78004DD3C3 /* CoreDataHandler.m */,
+			);
+			name = CoreDataHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +527,8 @@
 				TargetAttributes = {
 					869C5EFB1DA68CC400C0F293 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = WMTAELZ7FB;
+						ProvisioningStyle = Manual;
 					};
 					869C5F171DA68CC400C0F293 = {
 						CreatedOnToolsVersion = 8.0;
@@ -249,9 +567,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869C5F451DA6AB5800C0F293 /* sydra_logo.png in Resources */,
+				86EFAA271DA76A2A004DD3C3 /* edit.png in Resources */,
+				869C5F8D1DA6D9CA00C0F293 /* plus.png in Resources */,
+				869C5F931DA6D9D900C0F293 /* menu@2x.png in Resources */,
+				869C5F471DA6AB6200C0F293 /* sydra_logo@2x.png in Resources */,
+				869C5F8B1DA6D4FC00C0F293 /* more.png in Resources */,
 				869C5F121DA68CC400C0F293 /* LaunchScreen.storyboard in Resources */,
+				86EFAA261DA76A2A004DD3C3 /* done@2x.png in Resources */,
+				869C5F891DA6D4F500C0F293 /* more@2x.png in Resources */,
+				869C5F4E1DA6C05C00C0F293 /* close@2x.png in Resources */,
+				86EFAA231DA76A2A004DD3C3 /* clock.png in Resources */,
+				869C5F9C1DA6E45F00C0F293 /* ColorList.plist in Resources */,
+				86EFAA281DA76A2A004DD3C3 /* edit@2x.png in Resources */,
+				869C5F501DA6C06000C0F293 /* close.png in Resources */,
+				86EFAA251DA76A2A004DD3C3 /* done.png in Resources */,
+				86EFAA291DA76A2A004DD3C3 /* pointer.png in Resources */,
+				869C5FA91DA7096A00C0F293 /* SVProgressHUD.bundle in Resources */,
+				869C5F911DA6D9D400C0F293 /* menu.png in Resources */,
 				869C5F0F1DA68CC400C0F293 /* Assets.xcassets in Resources */,
+				869C5F8F1DA6D9CE00C0F293 /* plus@2x.png in Resources */,
+				86EFAA241DA76A2A004DD3C3 /* clock@2x.png in Resources */,
 				869C5F0A1DA68CC400C0F293 /* Main.storyboard in Resources */,
+				86EFAA2A1DA76A2A004DD3C3 /* pointer@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +614,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869C5FB11DA7193B00C0F293 /* IQDropDownTextField.m in Sources */,
+				869C5F421DA6A06500C0F293 /* TealButton.m in Sources */,
+				869C5F781DA6C83B00C0F293 /* FSCalendarCollectionView.m in Sources */,
 				869C5F071DA68CC400C0F293 /* ViewController.m in Sources */,
+				869C5FA81DA7096A00C0F293 /* SVProgressAnimatedView.m in Sources */,
+				869C5F721DA6C83B00C0F293 /* FSCalendar.m in Sources */,
+				869C5F731DA6C83B00C0F293 /* FSCalendarAppearance.m in Sources */,
 				869C5F0D1DA68CC400C0F293 /* Sydra.xcdatamodeld in Sources */,
+				869C5F7A1DA6C83B00C0F293 /* FSCalendarStickyHeader.m in Sources */,
+				869C5F971DA6DFF800C0F293 /* NewTaskViewController.m in Sources */,
+				869C5FAA1DA7096A00C0F293 /* SVProgressHUD.m in Sources */,
+				869C5F751DA6C83B00C0F293 /* FSCalendarScopeHandle.m in Sources */,
+				869C5F7F1DA6C83B00C0F293 /* NSObject+FSExtension.m in Sources */,
+				869C5F7B1DA6C83B00C0F293 /* FSCalendarFlowLayout.m in Sources */,
+				869C5FAE1DA70E1C00C0F293 /* KeychainWrapper.m in Sources */,
+				869C5F7C1DA6C83B00C0F293 /* FSCalendarAnimator.m in Sources */,
+				86EFAA171DA74C45004DD3C3 /* Task+CoreDataProperties.m in Sources */,
+				869C5F7E1DA6C83B00C0F293 /* CALayer+FSExtension.m in Sources */,
+				869C5F791DA6C83B00C0F293 /* FSCalendarHeader.m in Sources */,
+				869C5F811DA6C83B00C0F293 /* FSCalendar+Deprecated.m in Sources */,
+				869C5F801DA6C83B00C0F293 /* FSCalendar+IBExtension.m in Sources */,
+				869C5F761DA6C83B00C0F293 /* FSCalendarCell.m in Sources */,
+				869C5FB81DA72C1200C0F293 /* MapViewController.m in Sources */,
+				86EFAA161DA74C45004DD3C3 /* Task+CoreDataClass.m in Sources */,
+				869C5FAB1DA7096A00C0F293 /* SVRadialGradientLayer.m in Sources */,
+				86EFAA1A1DA74C78004DD3C3 /* CoreDataHandler.m in Sources */,
+				869C5F741DA6C83B00C0F293 /* FSCalendarConstance.m in Sources */,
+				869C5F851DA6C91000C0F293 /* TimelineViewController.m in Sources */,
+				869C5F771DA6C83B00C0F293 /* FSCalendarEventIndicator.m in Sources */,
+				86EFAA2D1DA76A80004DD3C3 /* TimelineTableViewCell.m in Sources */,
+				869C5FA71DA7096A00C0F293 /* SVIndefiniteAnimatedView.m in Sources */,
+				869C5F7D1DA6C83B00C0F293 /* UIView+FSExtension.m in Sources */,
+				869C5F9A1DA6E08800C0F293 /* NewTaskTableViewCell.m in Sources */,
 				869C5F041DA68CC400C0F293 /* AppDelegate.m in Sources */,
 				869C5F011DA68CC400C0F293 /* main.m in Sources */,
+				869C5F371DA68EAE00C0F293 /* LoginTableViewCell.m in Sources */,
+				869C5F3E1DA69CFE00C0F293 /* SignUpController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,10 +799,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sagar Indurkar (VX9VK83B9E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sagar Indurkar (VX9VK83B9E)";
+				DEVELOPMENT_TEAM = WMTAELZ7FB;
 				INFOPLIST_FILE = Sydra/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.Sydra;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = maTest;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -439,10 +816,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sagar Indurkar (VX9VK83B9E)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sagar Indurkar (VX9VK83B9E)";
+				DEVELOPMENT_TEAM = WMTAELZ7FB;
 				INFOPLIST_FILE = Sydra/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.Sydra;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mangoapps.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = maTest;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -511,6 +894,7 @@
 				869C5F2E1DA68CC400C0F293 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		869C5F2F1DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "SydraTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +903,7 @@
 				869C5F311DA68CC400C0F293 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		869C5F321DA68CC400C0F293 /* Build configuration list for PBXNativeTarget "SydraUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +912,7 @@
 				869C5F341DA68CC400C0F293 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

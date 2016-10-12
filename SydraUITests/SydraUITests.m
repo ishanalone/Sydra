@@ -55,7 +55,6 @@
     [loginbutton tap];
     
     XCTAssert([self.app.otherElements containingType:XCUIElementTypeAlert identifier:@"Oops!!!"]);
-    XCTAssert([self.app.alerts[@"Oops!!!"] exists]);
      [self.app.alerts[@"Oops!!!"].buttons[@"OK"] tap];
 }
 

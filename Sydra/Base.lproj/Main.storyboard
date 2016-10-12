@@ -12,7 +12,7 @@
                 <navigationController navigationBarHidden="YES" id="7yq-gP-Qxt" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7lo-GQ-3f3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7lo-GQ-3f3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -29,7 +29,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="Qaz-ig-uVZ" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="t41-8s-eQj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t41-8s-eQj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -210,7 +210,6 @@
                             <constraint firstAttribute="trailing" secondItem="tne-ek-LIX" secondAttribute="trailing" id="NqJ-0y-Dca"/>
                             <constraint firstItem="ojx-Fq-YCB" firstAttribute="top" secondItem="quL-UZ-Myk" secondAttribute="bottom" constant="12" id="S1W-Se-x98"/>
                             <constraint firstItem="Rck-oN-a0h" firstAttribute="top" secondItem="tne-ek-LIX" secondAttribute="bottom" id="bBI-vd-iX7"/>
-                            <constraint firstItem="tne-ek-LIX" firstAttribute="top" secondItem="ojx-Fq-YCB" secondAttribute="bottom" constant="8" id="mpb-AL-XAl"/>
                             <constraint firstItem="quL-UZ-Myk" firstAttribute="leading" secondItem="E13-l1-3IY" secondAttribute="trailing" constant="55" id="pJE-eK-qKM"/>
                             <constraint firstItem="tne-ek-LIX" firstAttribute="leading" secondItem="n47-Yq-Vex" secondAttribute="leading" id="uvR-Ed-FEx"/>
                             <constraint firstAttribute="trailing" secondItem="ojx-Fq-YCB" secondAttribute="trailing" id="xFb-SI-h6L"/>

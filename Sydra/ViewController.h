@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITextField+Shake.h"
 
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (nonatomic,weak) IBOutlet UITableView* loginTable;

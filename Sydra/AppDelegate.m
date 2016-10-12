@@ -9,9 +9,13 @@
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
 #import <CoreLocation/CoreLocation.h>
+#import "Task+CoreDataClass.h"
+#import <UserNotifications/UserNotifications.h>
+#import "CoreDataHandler.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate ()<CLLocationManagerDelegate>
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *notifLocation;
 @end
 
 @implementation AppDelegate
@@ -24,9 +28,13 @@
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
     [application registerUserNotificationSettings:settings];
+    [self setupLocationMonitoring];
     return YES;
 }
 
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    NSLog(@"Registered");
+}
 +(AppDelegate*)getAppDelegate{
     return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
@@ -68,7 +76,7 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    
+    NSLog(@"Did recieve local notifcation");
 }
 
 - (void)buildAgreeTextViewFromString:(NSString *)localizedString atContainer:(UIView*)container andController:(UIViewController*)controller
@@ -158,26 +166,120 @@
     }
 }
 
+- (void) setupLocationMonitoring
+{
+    if (self.locationManager == nil) {
+        self.locationManager = [[CLLocationManager alloc] init];
+    }
+    
+    self.locationManager.pausesLocationUpdatesAutomatically=NO;
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter = 10.0f; // meters
+    
+    // iOS 8+ request authorization to track the user’s location
+    if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    
+    [self.locationManager startMonitoringSignificantLocationChanges];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    // check status to see if we’re authorized
+    BOOL canUseLocationNotifications = (status == kCLAuthorizationStatusAuthorizedWhenInUse);
+    if (canUseLocationNotifications) {
+        //[self registerLocationNotification];
+    }
+}
+
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    NSArray* taskArr = [[CoreDataHandler sharedInstance] getAllTask];
+    CLLocation* location = [locations lastObject];
+    for (int i = 0; i<taskArr.count; i++) {
+        Task* task = taskArr[i];
+        if (!task.taskState) {
+            NSArray* locArray = [task.taskCordinates componentsSeparatedByString:@","];
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([locArray[0] floatValue], [locArray[1] floatValue]);
+            CLLocation* taskLocation = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+            CLLocationDistance distnace = [location distanceFromLocation:taskLocation];
+            if (distnace < 1000) {
+               UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+                localNotification.alertBody = task.taskDetail;
+                localNotification.soundName = UILocalNotificationDefaultSoundName;
+                [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
+            }
+        }
+    }
+}
+
 -(void)addNotification:(NSDictionary*)dictionary{
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+   
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"IST"]];
     NSDate* date = [formatter dateFromString:dictionary[@"date"]];
     //date = [self toLocalTime:date];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     NSDate* time = [formatter dateFromString:dictionary[@"time"]];
     
     NSDate* combined = [self combineDate:date withTime:time];
-    combined = [self toLocalTime:combined];
+    //combined = [self toLocalTime:combined];
     localNotification.fireDate = combined;
     localNotification.alertBody = dictionary[@"desc"];
-    localNotification.timeZone = [NSTimeZone localTimeZone];
+    localNotification.timeZone = [NSTimeZone timeZoneWithName:@"IST"];
+    localNotification.soundName = @"notify.m4r";//UILocalNotificationDefaultSoundName;
+    localNotification.regionTriggersOnce = NO;
     localNotification.userInfo = @{@"id":[NSString stringWithFormat:@"%d",[[dictionary objectForKey:@"id"] intValue]]};
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([[[[dictionary objectForKey:@"geometry"] objectForKey:@"location"] objectForKey:@"lat"] floatValue], [[[[dictionary objectForKey:@"geometry"] objectForKey:@"location"] objectForKey:@"lng"] floatValue]);
+    NSArray* corArray = [dictionary[@"coordinates"] componentsSeparatedByString:@","];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([corArray[0] floatValue], [corArray[1] floatValue]);
     CLRegion* region =   [[CLCircularRegion alloc] initWithCenter:coordinate radius:1000 identifier:@"target"];
     localNotification.region = region;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    /*UNNotificationAction *okAction = [UNNotificationAction actionWithIdentifier:@"OKIdentifier" title:@"Ok" options:UNNotificationActionOptionForeground];;
+    UNNotificationAction *cancelAction = [UNNotificationAction actionWithIdentifier:@"CancelIdentifier" title:@"Ok" options:UNNotificationActionOptionForeground];*/
+    
+   /* UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+    content.title = dictionary[@"desc"];
+    content.sound = [UNNotificationSound defaultSound];
+    
+    
+    NSCalendar *calendar            = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear  |
+                                                         NSCalendarUnitMonth |
+                                                         NSCalendarUnitDay   |
+                                                         NSCalendarUnitHour  |
+                                                         NSCalendarUnitMinute|
+                                                         NSCalendarUnitSecond) fromDate:combined];
+    
+    UNCalendarNotificationTrigger* timeTrigger = [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:components repeats:NO];
+    
+    UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"LocalNotification" content:content trigger:timeTrigger];
+    
+    CLLocationCoordinate2D cordinate = CLLocationCoordinate2DMake([[[[dictionary objectForKey:@"geometry"] objectForKey:@"location"] objectForKey:@"lat"] floatValue], [[[[dictionary objectForKey:@"geometry"] objectForKey:@"location"] objectForKey:@"lng"] floatValue]);
+    CLCircularRegion* triggerRegion = [[CLCircularRegion alloc] initWithCenter:coordinate radius:1000 identifier:@"location"];
+    
+    UNLocationNotificationTrigger* locTrigger = [UNLocationNotificationTrigger triggerWithRegion:triggerRegion repeats:NO];
+    UNNotificationRequest* request1 = [UNNotificationRequest requestWithIdentifier:@"LocalNotification" content:content trigger:locTrigger];*/
+    
+    
+}
+
+-(void)removeNotificationWithTask:(Task*)task{
+    NSString *myIDToCancel = task.taskId;
+    UILocalNotification *notificationToCancel=nil;
+    for(UILocalNotification *aNotif in [[UIApplication sharedApplication] scheduledLocalNotifications]) {
+        if([[aNotif.userInfo objectForKey:@"id"] isEqualToString:myIDToCancel]) {
+            notificationToCancel=aNotif;
+            break;
+        }
+    }
+    if(notificationToCancel) [[UIApplication sharedApplication] cancelLocalNotification:notificationToCancel];
 }
 
 -(NSDate *) toLocalTime:(NSDate*)date
@@ -191,7 +293,7 @@
     
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:
                              NSCalendarIdentifierGregorian];
-    [gregorian setTimeZone:[NSTimeZone systemTimeZone]];
+    [gregorian setTimeZone:[NSTimeZone timeZoneWithName:@"IST"]];
     unsigned unitFlagsDate = NSCalendarUnitYear | NSCalendarUnitMonth
     |  NSCalendarUnitDay;
     NSDateComponents *dateComponents = [gregorian components:unitFlagsDate
@@ -209,6 +311,9 @@
     
     return combDate;
 }
+
+
+
 
 #pragma mark - Core Data stack
 
@@ -250,11 +355,17 @@
     if ([context hasChanges] && ![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        if (error) {
+            
+        }
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
+        //abort();
     }
 }
 
-
+-(void)dealloc{
+    
+    NSLog(@"App killed");
+}
 
 @end

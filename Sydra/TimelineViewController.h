@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface TimelineViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
-
+#import "MGSwipeTableCell.h"
+@interface TimelineViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,MGSwipeTableCellDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeightConstraint;
+-(void)reloadCalendar;
 @end

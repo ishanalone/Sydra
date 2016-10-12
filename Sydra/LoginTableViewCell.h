@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@import Material;
+
 @interface LoginTableViewCell : UITableViewCell
-@property (nonatomic,weak) IBOutlet UITextField* inputField;
+@property (nonatomic,weak) IBOutlet ErrorTextField* inputField;
 @end

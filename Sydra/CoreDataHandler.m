@@ -24,16 +24,75 @@ static CoreDataHandler *sharedInstance = nil;
 }
 
 -(void)addTask:(NSDictionary*)taskDictionary{
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
-    Task *task = (Task*)[[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"taskId", taskDictionary[@"id"]];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *result = [[AppDelegate getAppDelegate].persistentContainer.viewContext executeFetchRequest:fetchRequest error:&error];
+    Task *task;
+    if (result.count > 0) {
+        task = result[0];
+    }else{
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+        task = (Task*)[[NSManagedObject alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    }
+    
     task.taskId = [NSString stringWithFormat:@"%d",[[taskDictionary objectForKey:@"id"] intValue]];
     task.taskDate = [taskDictionary objectForKey:@"date"];
     task.taskTime = [taskDictionary objectForKey:@"time"];
     task.taskLocation = [taskDictionary objectForKey:@"location"];
     task.taskCordinates = [taskDictionary objectForKey:@"coordinates"];
-    task.taskColor = [taskDictionary objectForKey:@"color"];
-    task.taskDetail = [taskDictionary objectForKey:@"desc"];
+    NSDictionary* colorDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ColorList" ofType:@"plist"]];
+    NSString* color = taskDictionary[@"color"];
+    if ([color isEqualToString:@"-1"] || [color integerValue] > 12) {
+        color = @"0";
+    }
+    task.taskColor = [[colorDictionary allKeys] objectAtIndex:[color integerValue]];
+    if ([taskDictionary objectForKey:@"desc"] != [NSNull null]) {
+        task.taskDetail = [taskDictionary objectForKey:@"desc"];
+    }
+    
+
+    task.taskState = NO;
+    if (result.count == 0) {
+        [[AppDelegate getAppDelegate] addNotification:taskDictionary];
+    }
+    
+}
+
+-(Task*)updateTask:(NSDictionary*)taskDictionary withId:(NSString*)tid{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"taskId", tid];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *result = [[AppDelegate getAppDelegate].persistentContainer.viewContext executeFetchRequest:fetchRequest error:&error];
+    Task* task;
+    if (result) {
+        task = result[0];
+        task.taskId = [NSString stringWithFormat:@"%d",[[taskDictionary objectForKey:@"id"] intValue]];
+        task.taskDate = [taskDictionary objectForKey:@"date"];
+        task.taskTime = [taskDictionary objectForKey:@"time"];
+        task.taskLocation = [taskDictionary objectForKey:@"location"];
+        task.taskCordinates = [taskDictionary objectForKey:@"coordinates"];
+        task.taskColor = [taskDictionary objectForKey:@"color"];
+        task.taskDetail = [taskDictionary objectForKey:@"desc"];
+        task.taskState = NO;
+    }
     [[AppDelegate getAppDelegate] saveContext];
+    
+    return task;
 }
 
 -(NSArray*)getAllTask{
@@ -50,7 +109,7 @@ static CoreDataHandler *sharedInstance = nil;
         NSLog(@"%@, %@", error, error.localizedDescription);
         
     } else {
-        NSLog(@"%@", result);
+        
         return result;
     }
     return nil;
@@ -64,9 +123,14 @@ static CoreDataHandler *sharedInstance = nil;
     // Required! Unless you set the resultType to NSDictionaryResultType, distinct can't work.
     // All objects in the backing store are implicitly distinct, but two dictionaries can be duplicates.
     // Since you only want distinct names, only ask for the 'name' property.
+    
     fetchRequest.resultType = NSDictionaryResultType;
     fetchRequest.propertiesToFetch = [NSArray arrayWithObject:[[entity propertiesByName] objectForKey:@"taskDate"]];
     fetchRequest.returnsDistinctResults = YES;
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"taskDate" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Now it should yield an NSArray of distinct values in dictionaries.
     NSArray *dictionaries = [[AppDelegate getAppDelegate].persistentContainer.viewContext executeFetchRequest:fetchRequest error:nil];
@@ -91,10 +155,66 @@ static CoreDataHandler *sharedInstance = nil;
         NSLog(@"%@, %@", error, error.localizedDescription);
         
     } else {
-        NSLog(@"%@", result);
+       
         return result;
     }
     return nil;
+}
+
+-(void)setTaskDone:(NSString*)tid{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"taskId", tid];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *result = [[AppDelegate getAppDelegate].persistentContainer.viewContext executeFetchRequest:fetchRequest error:&error];
+    if (result) {
+        Task* task = result[0];
+        task.taskState = YES;
+    }
+    [[AppDelegate getAppDelegate] saveContext];
+}
+
+-(void)deleteTaskWithId:(NSString*)tid{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"taskId", tid];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *result = [[AppDelegate getAppDelegate].persistentContainer.viewContext executeFetchRequest:fetchRequest error:&error];
+    if (result) {
+        Task* task = result[0];
+        [[AppDelegate getAppDelegate].persistentContainer.viewContext deleteObject:task];
+    }
+    [[AppDelegate getAppDelegate] saveContext];
+}
+
+-(void)clearAllData{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:[AppDelegate getAppDelegate].persistentContainer.viewContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [[AppDelegate getAppDelegate].persistentContainer.viewContext executeFetchRequest:fetchRequest error:&error];
+   
+    
+    
+    for (NSManagedObject *managedObject in items) {
+        [[AppDelegate getAppDelegate].persistentContainer.viewContext deleteObject:managedObject];
+        
+    }
+    [[AppDelegate getAppDelegate]saveContext];
+    
 }
 
 @end

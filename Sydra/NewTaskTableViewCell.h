@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@import Material;
+
 @interface NewTaskTableViewCell : UITableViewCell
-@property (nonatomic,weak) IBOutlet UITextField* inputField;
+@property (nonatomic,weak) IBOutlet TextField* inputField;
 @property (nonatomic,weak) IBOutlet UILabel* placeholderLabel;
 @end

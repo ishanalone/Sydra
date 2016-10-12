@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "Task+CoreDataClass.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -20,5 +21,7 @@
 - (void)buildAgreeTextViewFromString:(NSString *)localizedString atContainer:(UIView*)container andController:(UIViewController*)controller;
 -(void)showActivityIndicator:(BOOL)show;
 -(void)addNotification:(NSDictionary*)dictionary;
+-(void)showAlertOnViewController:(UIViewController*)controller WithMessage:(NSString*)message andTitle:(NSString*)title;
+-(void)removeNotificationWithTask:(Task*)task;
 @end
 

@@ -18,7 +18,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:nil];
+    doubleTap.numberOfTapsRequired = 2;
+    doubleTap.numberOfTouchesRequired = 1;
+    [self.mapView addGestureRecognizer:doubleTap];
+    
+    UITapGestureRecognizer* tapRec = [[UITapGestureRecognizer alloc]
+                                      initWithTarget:self action:@selector(didTapMap:)];
+    tapRec.numberOfTapsRequired = 1;
+    tapRec.numberOfTouchesRequired = 1;
+    [tapRec requireGestureRecognizerToFail: doubleTap];
+    [self.mapView addGestureRecognizer:tapRec];
+
     // Do any additional setup after loading the view.
+}
+
+-(void)didTapMap:(UIGestureRecognizer*)gesture{
+    CGPoint point = [gesture locationInView:self.mapView];
+    CLLocationCoordinate2D tapPoint = [self.mapView convertPoint:point toCoordinateFromView:self.view];
+    CLLocation* eventLocation = [[CLLocation alloc] initWithLatitude:tapPoint.latitude longitude:tapPoint.longitude];
+    [self getAddressFromLocation:eventLocation complationBlock:^(NSString * address) {
+        if(address) {
+            self.searchResultArray = @[@{@"formatted_address":address,@"geometry":@{@"location":@{@"lat":[NSString stringWithFormat:@"%f",tapPoint.latitude],@"lng":[NSString stringWithFormat:@"%f",tapPoint.longitude]}}}];
+            [self.locTable performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+         }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,28 +53,7 @@
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [searchBar resignFirstResponder];
-   /* CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray *placemarks, NSError *error) {
-        //Error checking
-        self.searchResultArray = placemarks;
-        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        MKCoordinateRegion region;
-        region.center.latitude = placemark.location.coordinate.latitude;
-        region.center.longitude = placemark.location.coordinate.longitude;
-        MKCoordinateSpan span;
-        double radius = placemark.region.radius / 1000; // convert to km
-        
-        NSLog(@"[searchBarSearchButtonClicked] Radius is %f", radius);
-        span.latitudeDelta = radius / 112.0;
-        
-        region.span = span;
-        [self.view endEditing:YES];
-        [self.mapView setRegion:region animated:YES];
-        [self.locTable reloadData];
-    
-    }];*/
-    
-    //[[AppDelegate getAppDelegate] showActivityIndicator:YES];
+
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
     //sessionConfiguration.HTTPAdditionalHeaders = @{@"Authorization": authValue};
     
@@ -77,6 +81,55 @@
                 NSLog(@"response - %@",response);
                 self.searchResultArray = [jsonData objectForKey:@"results"];
                 [self.locTable performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+                //Process the data
+            }else{
+                NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:nil];
+                NSLog(@"response - %@",jsonData);
+            }
+        }
+        
+    }];
+    [task resume];
+}
+
+typedef void(^addressCompletion)(NSString *);
+
+-(void)getAddressFromLocation:(CLLocation *)location complationBlock:(addressCompletion)completionBlock
+{
+    __block NSString *address = nil;
+    NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    //sessionConfiguration.HTTPAdditionalHeaders = @{@"Authorization": authValue};
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration];
+    
+    NSMutableString *urlString = [NSMutableString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&key=AIzaSyBoHXr7mYzxaFD8Vj2r6azSjyjXheuF-5o",location.coordinate.latitude,location.coordinate.longitude];
+    
+    //Replace Spaces with a '+' character.
+    [urlString setString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+    
+    //Create NSURL string from a formate URL string.
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    request.HTTPMethod = @"GET";
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        if (!error) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+            if (httpResponse.statusCode == 200){
+                NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:nil];
+                NSArray* locArray = jsonData[@"results"];
+                if (locArray.count > 0) {
+                    NSDictionary* locDict = locArray[0];
+                    
+                    address = locDict[@"formatted_address"];
+                    completionBlock(address);
+                }else{
+                    completionBlock(@"");
+                }
+                
                 //Process the data
             }else{
                 NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers|NSJSONReadingAllowFragments error:nil];

@@ -15,4 +15,8 @@
 -(NSArray*)getAllTask;
 -(NSArray*)getAllDate;
 -(NSArray*)getallTaskForDate:(NSString*)date;
+-(void)setTaskDone:(NSString*)tid;
+-(void)deleteTaskWithId:(NSString*)tid;
+-(Task*)updateTask:(NSDictionary*)taskDictionary withId:(NSString*)tid;
+-(void)clearAllData;
 @end

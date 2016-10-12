@@ -7,6 +7,7 @@
 //
 
 #import "TimelineTableViewCell.h"
+#import "CoreDataHandler.h"
 
 @implementation TimelineTableViewCell
 
@@ -19,6 +20,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setTaskDone{
+   
+    
+    [[CoreDataHandler sharedInstance] setTaskDone:self.task.taskId];
+    
 }
 
 @end

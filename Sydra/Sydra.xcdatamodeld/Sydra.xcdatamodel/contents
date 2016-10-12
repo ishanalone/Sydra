@@ -14,10 +14,11 @@
         <attribute name="taskDetail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="taskId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="taskLocation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskState" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="taskTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Colors" positionX="-54" positionY="36" width="128" height="120"/>
-        <element name="Task" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Task" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
